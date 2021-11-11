@@ -59,6 +59,7 @@ margin: 0.5em 0;
 
 const getItemTitleStyle = props => css`
 font-size: 1em;
+min-height: 3em;
 
 `
 const getItemImageStyle = props => css`
@@ -74,7 +75,6 @@ background-image: ${`url(${props.backgroundImage})`};
 const getFiltersAreaStyle = props => css`
     background-color: #e9e9e9;
     padding: 0.5em;
-    
   }
 `
 
