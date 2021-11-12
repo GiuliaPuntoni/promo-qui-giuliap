@@ -1,8 +1,7 @@
 import {css} from 'styled-components';
 
 const getContainerStyle = props => css`
-font-family: 'Roboto', sans-serif;
-text-align: center;
+    text-align: center;
 @media screen and (min-width: 1200px) {
     width: 1200px;
     margin: 0 auto;
@@ -10,36 +9,46 @@ text-align: center;
 `
 
 const getMainContainerStyle = props => css`
-width: 100%;
-margin: 0;
-text-align: center;
+    width: 100%;
+    margin: 0;
+    text-align: center;
 `
 
 
 const getItemsContainerStyle = props => css`
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-gap: 0 1em;
-margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 1em;
+    margin-top: 1em;
 @media screen and (max-width: 576px) {
     flex-direction: column;
 }
 `
+const getSingleItemWrapperStyle = props => css`
+    width: 100%;
+    border: 2px solid var(--grey);
+    border-radius: 0.5em;
+    position: relative;
+
+    &:hover {
+    transition-property: border;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+    border: 2px solid var(--second-color);
+}
+`
 
 const getSingleItemContainerStyle = props => css`
-display: flex;
-flex-direction: column;
-align-items: center;
-flex-grow: 1 1 auto;
-max-width: 22%;
-min-width: 22%;
-border: 2px solid #d9d9d9;
-border-radius: 0.5em;
-padding: 0em 0.5em 1em 0.5em;
-margin: 0.5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 22%;
+    min-width: 22%;
+    margin: 0.5em 0;
+
 @media screen and (max-width: 768px) {
     max-width: 32%;
     min-width: 32%;
@@ -49,31 +58,31 @@ margin: 0.5em 0;
     min-width: 90%;
 }
 
-&:hover {
-    transition-property: opacity;
-    opacity: 0.5;
-	transition-duration: 0.5s;
-	transition-timing-function: ease-out;
-}
+
+
 `
 
 const getItemTitleStyle = props => css`
-font-size: 1em;
-min-height: 3em;
+    font-size: 0.8em;
+    color: var(--link-color);
+    font-weight: 400;
 
 `
 const getItemImageStyle = props => css`
-width: 100%;
-height: 200px;
-background-position: center;
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-background-image: ${`url(${props.backgroundImage})`};
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: ${`url(${props.backgroundImage})`};
+    border-radius: 0.5em;
+    position: relative;
+
 `
 
 const getFiltersAreaStyle = props => css`
-    background-color: #e9e9e9;
+    background-color: var(--grey);
     padding: 0.5em;
   }
 `
@@ -94,15 +103,16 @@ const getInputStyle = props => css`
     padding: 0.5em;
     box-sizing: border-box;
     outline: none;
-    border: 1px solid #808080;
+    border: 1px solid var(--text-color);
 
     &:focus {
-    border: 1px solid #555;
+    border: 1px solid var(--link-color);
+    }
 
 `
 
 const getLabelInputStyle = props => css`
-padding: 0 1em;
+    padding: 0 1em;
 `
 
 const getSelectStyle = props => css`
@@ -110,16 +120,15 @@ const getSelectStyle = props => css`
     padding: 0.5em;
     box-sizing: border-box;
     outline: none;
-    border: 1px solid #808080;
+    border: 1px solid var(--text-color);
 
-    &:focus {
-    border: 1px solid #555;
 `
 
 export {
     getContainerStyle,
     getItemsContainerStyle,
     getSingleItemContainerStyle,
+    getSingleItemWrapperStyle,
     getItemTitleStyle,
     getItemImageStyle,
     getFiltersAreaStyle,
